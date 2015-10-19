@@ -1,0 +1,37 @@
+<!doctype html>
+<section id=player>
+</section>
+<section id=stats>
+</section>
+<script>
+  var player = document.getElementById('player');
+  var stats = document.getElementById('stats');
+  var startTime = performance.now();
+
+  var createVideo = function() {
+    var video = document.createElement('video');
+
+    video.addEventListener('error', function() {
+      clearVideo();
+      createVideo();
+    });
+
+    video.addEventListener('playing', function() {
+      var playingTime = performance.now();
+      stats.appendChild(document.createTextNode(playingTime));
+    });
+
+    video.width = 640;
+    video.height = 360;
+    video.autoplay = 'autoplay';
+    video.controls = 'controls';
+    video.src = 'index.m3u8';
+
+    player.appendChild(video);
+  };
+  var clearVideo = function() {
+    player.innerHTML = '';
+  };
+
+  createVideo();
+</script>
