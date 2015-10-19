@@ -13,4 +13,4 @@ segment size | time to `playing`
 8 seconds | 17.242415 seconds
 10 seconds | 21.237105000000003 seconds
 
-If we delay opening the browser until three segments have been created, then playback is essentially immediate.
+If we delay opening the browser (Safari/Mac or Safari/iOS) until three segments have been created, then playback is essentially immediate.
