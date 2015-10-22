@@ -28,3 +28,12 @@ node gpac-dash.js -segment-marker eods -chunk-media-segments
 
 MP4Client http://127.0.0.1:8000/output/dashcast.mpd -opt Network:BufferLength=200 -opt DASH:LowLatency=chunk -opt DASH:UseServerUTC=no
 ```
+
+Through a Browser
+=================
+
+Grab Dash.js, set it up (this is the most basic use case)
+
+```
+DashCast -vf video4linux2 -vres 640x480 -vfr 30 -v /dev/video0 -live -seg-dur 10000 -gop 30
+```
